@@ -1,0 +1,34 @@
+<html>
+  <body>
+    <input id="todo" />
+    <button id="submit-button">Add Todo</button>
+    <!-- no delete because I'm lazy. just clear the db or smthn -->
+
+    <h1>Todos</h1>
+    <ul id="todos-list"><ul/>
+
+    <script>
+      const invoke = window.__TAURI__.core.invoke
+      const todo = document.getElementById("todo")
+      const submitButton = document.getElementById("submit-button")
+      const todosList = document.getElementById("todos-list")
+
+      updateTodos()
+
+      async function updateTodos() {
+        todosList.innerHTML = ""
+        JSON.parse(await invoke('list_todos')).forEach(todo => {
+          const li = document.createElement("li")
+          li.innerHTML = todo.name
+          todosList.append(li)
+        })
+      }
+
+      submitButton.addEventListener("click", async () => {
+        await invoke('add_todo', { todo: todo.value })
+        todo.value = ""
+        updateTodos()
+      });
+    </script>
+  </body>
+</html>

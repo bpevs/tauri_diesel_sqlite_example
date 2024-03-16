@@ -1,0 +1,37 @@
+{
+  "app": {
+    "withGlobalTauri": true,
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 600,
+        "resizable": true,
+        "title": "Tauri Diesel Example",
+        "width": 800
+      }
+    ]
+  },
+  "build": {
+    "beforeBuildCommand": "",
+    "beforeDevCommand": "serve --port 3000 ./src-www",
+    "devUrl": "http://0.0.0.0:3000",
+    "frontendDist": "../src-www"
+  },
+  "bundle": {
+    "active": true,
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "targets": "all"
+  },
+  "identifier": "com.example.diesel",
+  "productName": "tauri-diesel-example",
+  "version": "0.1.0"
+}
