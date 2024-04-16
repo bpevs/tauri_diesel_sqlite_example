@@ -1,10 +1,10 @@
-extern crate src_db;
+extern crate todos_db;
 mod common;
 
 use common::establish_test_connection;
 use serde_json::Value;
-use src_db::create::todos::create_todo;
-use src_db::list::todos::list_todos;
+use todos_db::create::todos::create_todo;
+use todos_db::list::todos::list_todos;
 
 #[test]
 fn test_adding_todo() {

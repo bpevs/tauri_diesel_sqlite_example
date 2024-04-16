@@ -4,6 +4,8 @@
   "description": "enables the default permissions",
   "windows": ["main"],
   "permissions": [
+    "todos-db:allow-add-todo",
+    "todos-db:allow-list-todos",
     "path:default",
     "event:default",
     "window:default",

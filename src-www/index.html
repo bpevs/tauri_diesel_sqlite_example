@@ -17,15 +17,16 @@
 
       async function updateTodos() {
         todosList.innerHTML = ""
-        JSON.parse(await invoke('list_todos')).forEach(todo => {
-          const li = document.createElement("li")
-          li.innerHTML = todo.name
-          todosList.append(li)
-        })
+        JSON.parse(await invoke('plugin:todos-db|list_todos'))
+          .forEach(todo => {
+            const li = document.createElement("li")
+            li.innerHTML = todo.name
+            todosList.append(li)
+          })
       }
 
       submitButton.addEventListener("click", async () => {
-        await invoke('add_todo', { todo: todo.value })
+        await invoke('plugin:todos-db|add_todo', { todo: todo.value })
         todo.value = ""
         updateTodos()
       });

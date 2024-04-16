@@ -24,7 +24,7 @@ tauri = { version = "2.0.0-beta.0", features = [] }
 
 # DB dependencies
 libsqlite3-sys = { version = ">=0.17.2, <0.28.0", features = ["bundled"] }
-src-db = { path = "../src-db" }
+todos-db = { path = "../src-db" }
 
 [features]
 # this feature is used for production builds or when `devUrl` points to the filesystem
