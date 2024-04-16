@@ -13,7 +13,9 @@
       const submitButton = document.getElementById("submit-button")
       const todosList = document.getElementById("todos-list")
 
-      updateTodos()
+      setTimeout(() => {
+        updateTodos()
+      }, 0)
 
       async function updateTodos() {
         todosList.innerHTML = ""

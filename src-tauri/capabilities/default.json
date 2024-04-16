@@ -1,5 +1,5 @@
 {
-  "$schema": "./schemas/desktop-schema.json",
+  "$schema": "./schemas/android-schema.json",
   "identifier": "default-plugins",
   "description": "enables the default permissions",
   "windows": ["main"],
