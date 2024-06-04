@@ -22,10 +22,6 @@ serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 tauri = { version = "2.0.0-beta.0", features = [] }
 
-# DB dependencies
-libsqlite3-sys = { version = ">=0.17.2, <0.28.0", features = ["bundled"] }
-todos-db = { path = "../src-db" }
-
 [features]
 # this feature is used for production builds or when `devUrl` points to the filesystem
 # DO NOT REMOVE!!
